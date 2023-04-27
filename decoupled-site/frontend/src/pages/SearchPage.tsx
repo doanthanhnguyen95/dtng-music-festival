@@ -35,6 +35,7 @@ function SearchPage() {
     if(queryString === undefined || queryString == 'undefined'){
         queryString = ""
     }
+
     variables = generateGQLSearchQueryVars(token, window.location.pathname, queryString, sortOption);
 
     const { data : searchQueryData } = useSearchQuery({ endpoint: singleKeyUrl }, variables, { staleTime: 2000, enabled: !modeEdit || !!token });
